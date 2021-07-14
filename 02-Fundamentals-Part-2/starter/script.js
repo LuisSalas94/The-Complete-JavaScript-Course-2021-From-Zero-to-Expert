@@ -85,9 +85,86 @@ function checkWinner(avgDolhins, avgKoalas) {
  */
 //checkWinner(avgDolhins, avgKoalas);
 
-const friends = ["Maria", "Milagros", "Isabel"];
-const years = new Array(1945, 1939, 1969, 1987, 1991);
+/* const friends = ["Maria", "Milagros", "Gozde"];
+const newLength = friends.push("Catherine");
+friends.unshift("Paola");
+console.log(friends);
+friends.pop();
+console.log(friends);
+friends.shift();
+console.log(friends);
+console.log(friends.indexOf("Gozde"));
+console.log(friends.includes("Milagros"));
+ */
 
-console.log(friends.length);
-console.log(years.length);
-console.log(friends[friends.length - 1]);
+/* function calctip(bill) {
+	return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const bills = [125, 555, 44];
+const tips = [calctip(bills[0]), calctip(bills[1]), calctip(bills[2])]; */
+//console.log(tips);
+
+/* const luis = {
+	firstName: "Fernando",
+	lastName: "Salas",
+	birthYear: 1987,
+	age: 34,
+	job: "porn actor",
+	hobbies: ["sex", "ww2", "kebabs"],
+	hasDriversLicense: true,
+	calcAge: function () {
+		return 2037 - this.birthYear;
+	},
+};
+ */
+//console.log(luis.calcAge());
+
+/* const markMiller = {
+	fullName: "Mark Miller",
+	mass: 78,
+	height: 1.69,
+	calcIBM: function () {
+		let BMI;
+		BMI = this.mass / this.height ** 2;
+		return BMI.toFixed(2);
+	},
+};
+
+const johnSmith = {
+	fullName: "John Smith",
+	mass: 92,
+	height: 1.95,
+	calcIBM: function () {
+		let BMI;
+		BMI = this.mass / this.height ** 2;
+		return BMI.toFixed(2);
+	},
+};
+
+const markMillerIBM = markMiller.calcIBM();
+
+const johnSmithIBM = johnSmith.calcIBM();
+
+if (markMillerIBM > johnSmithIBM) {
+	console.log(
+		`Marks BMI (${markMiller.calcIBM()}) is higher than John (${johnSmith.calcIBM()})`
+	);
+} else {
+	console.log(
+		`Marks BMI (${johnSmith.calcIBM()}) is higher than John (${markMiller.calcIBM()})`
+	);
+}
+ */
+
+const luis = ["Fernando", "Salas", 1987, 34, "porn actor"];
+
+/* for (let i = 0; i < luis.length; i++) {
+	if (typeof luis[i] !== "string") continue;
+	console.log(luis[i]);
+}
+ */
+for (let i = 0; i < luis.length; i++) {
+	if (typeof luis[i] === "string") continue;
+	console.log(luis[i]);
+}
