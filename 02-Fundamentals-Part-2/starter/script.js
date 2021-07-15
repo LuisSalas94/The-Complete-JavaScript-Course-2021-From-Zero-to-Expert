@@ -157,14 +157,35 @@ if (markMillerIBM > johnSmithIBM) {
 }
  */
 
-const luis = ["Fernando", "Salas", 1987, 34, "porn actor"];
-
 /* for (let i = 0; i < luis.length; i++) {
 	if (typeof luis[i] !== "string") continue;
 	console.log(luis[i]);
 }
- */
-for (let i = 0; i < luis.length; i++) {
+*/
+/* for (let i = 0; i < luis.length; i++) {
 	if (typeof luis[i] === "string") continue;
 	console.log(luis[i]);
+} */
+
+/* const luis = [
+	"Fernando",
+	"Salas",
+	1987,
+	34,
+	"porn actor",
+	["sex", "ww2", "kebabs"],
+];
+
+for (let i = luis.length - 1; i >= 0; i--) {
+	console.log(luis[i]);
+} */
+
+/* for (let i = 1; i <= 10; i++) {
+	console.log(i);
+} */
+
+let i = 1;
+while (i <= 10) {
+	console.log(i);
+	i++;
 }
