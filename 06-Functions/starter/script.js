@@ -94,3 +94,56 @@ const greet2 = greeting2 => name => {
 const greetHey2 = greet2('hey');
 greetHey2('Maria');
 greet2('hi...')('wanna fuck?');
+
+/* Call and apply methods */
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flithNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flithNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode} ${flithNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Fernando');
+lufthansa.book(645, 'Maria');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+/* Call Method */
+const book = lufthansa.book;
+book.call(eurowings, 23, 'Sarah');
+console.log(eurowings);
+
+book.call(lufthansa, 21, 'Gozde');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Paola');
+
+/* Apply method */
+const fligthData = [583, 'George Cooper'];
+book.apply(swiss, fligthData);
+console.log(swiss);
+
+book.call(swiss, ...fligthData);
+
+/* Bind Method */
+const bookEW = book.bind(eurowings);
+const bookLh = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Gozde');
