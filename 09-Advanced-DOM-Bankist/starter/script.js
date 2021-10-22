@@ -74,7 +74,7 @@ message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
 //used this with custom properties
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+//document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 //Attributes
 const logo = document.querySelector('.nav__logo');
@@ -101,3 +101,45 @@ logo.classList.add('c', 'j');
 logo.classList.remove('c', 'j');
 logo.classList.toggle('c');
 logo.classList.contains('c');
+
+/* ********************************** Implementing Smooth  Scrolling ***************************************************** */
+//Old School Way
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', e => {
+  const s1coords = section1.getBoundingClientRect();
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+/* ********************************* Types of Event Handlers
+ ***************************************************** */
+//addEventListener
+const h1 = document.querySelector('h1');
+
+const alertH1 = function (e) {
+  alert('addEventListener: Great! You are reading the heading');
+  h1.removeEventListener('mouseenter', alertH1);
+};
+//remove event listener
+h1.addEventListener('mouseenter', alertH1);
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+/* ********************************* Event Propagation Bubbling and Capturing
+ ***************************************************** */
+// rgb(255,255,255)
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
+
+document
+  .querySelector('.nav__links')
+  .addEventListener('click', function (e) {});
+
+document.querySelector('.nav').addEventListener('click', function (e) {});
